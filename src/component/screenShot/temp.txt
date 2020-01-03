@@ -1,0 +1,63 @@
+    // 0.4.1版本截屏的结果
+    // html2canvas0(document.querySelector('body'), {
+    //   onrendered: (canvas) => {
+    //     let h = document.documentElement.scrollHeight
+    //     let w = document.documentElement.scrollWidth
+    //     let dh = document.documentElement.clientHeight
+    //     let sy = document.documentElement.scrollTop
+    //
+    //     let canvasTemp = document.createElement('canvas')
+    //     canvasTemp.setAttribute('width', w + 'px')
+    //     canvasTemp.setAttribute('height', dh + 'px')
+    //
+    //     let ctx = canvasTemp.getContext('2d')
+    //     ctx.drawImage(canvas, 0, sy, w, dh, 0, 0, w, dh)
+    //     let img = canvasTemp.toDataURL()
+    //     $(document).scrollTop(sy)
+    //     this.imgInfoList.push(img)
+    //     this.imgInfoList.push(canvas.toDataURL())
+    //   },
+    // })
+
+
+
+      // html2canvas($('body'), {
+      //   onrendered (canvas) {
+      //     let h = $(document).height()
+      //     let w = $(document).width()
+      //     let dh = $(window).height()
+      //     let sy = $(document).scrollTop()
+      //
+      //     let _canvas = $(`<canvas id="feedback-canvas-tmp" width="${w}" height="${dh}"/>`).hide().appendTo('body')
+      //     let _ctx = _canvas.get(0).getContext('2d')
+      //     _ctx.drawImage(canvas, 0, sy, w, dh, 0, 0, w, dh)
+      //     let img = _canvas.get(0).toDataURL()
+      //     $(document).scrollTop(sy)
+      //
+      //     let post = {}
+      //     post.img = img
+      //     $('#bgFixed').before(`<img class="feedback-begin" src="${img}" />`)
+      //
+      //     function getFormData (imgDataUrl) {
+      //       imgDataUrl = imgDataUrl.split(',')[1]
+      //       imgDataUrl = window.atob(imgDataUrl)
+      //       let ia = new Uint8Array(imgDataUrl.length)
+      //       for (let i = 0; i < imgDataUrl.length; i++) {
+      //         ia[i] = imgDataUrl.charCodeAt(i)
+      //       }
+      //       let blob = new Blob([ia], { type: 'image/png', endings: 'transparent' })
+      //       let formDataFile = new FormData()
+      //       formDataFile.append('file', blob, 'feedbackimage.png')
+      //       return formDataFile
+      //     }
+      //
+      //     let formData = getFormData(post.img)
+      //     axios.post(`url`, formData, {
+      //       headers: { 'Content-Type': 'multipart/form-data' },
+      //     })
+      //   },
+      // })
+
+      // html2canvas(document.body).then((canvas) => {
+      //   $(this.refs.outer).before(`<img class="feedback-begin" src="${canvas.toDataURL()}" />`)
+      // })
