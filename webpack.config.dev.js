@@ -1,7 +1,3 @@
-/**
- * Dev mode config
- */
-
 var webpack = require('webpack');
 var path = require('path');
 
@@ -20,18 +16,7 @@ module.exports = {
     publicPath: '/static/',
     chunkFilename: '[name].[chunkhash:5].chunk.js',
   },
-  devServer: {
-    proxy: { // proxy URLs to backend development server
-      '/api': 'http://localhost:3000'
-    },
-    contentBase: path.join(__dirname, 'dist'), // boolean | string | array, static file location
-    compress: true, // enable gzip compression
-    historyApiFallback: true, // true for index.html upon 404, object for multiple paths
-    hot: true, // hot module replacement. Depends on HotModuleReplacementPlugin
-    https: false, // true for self-signed, object for cert authority
-    noInfo: true, // only errors & warns on hot reload
-    // ...
-  },
+  devServer: {},
   resolve: {
     extensions: [".js", ".json", ".jsx", ".css", ".less"]
   },
@@ -50,11 +35,6 @@ module.exports = {
           'style-loader',
           {
             loader: 'css-loader',
-            // options: { modules: true, localIdentName: '[path][name]__[local]--[hash:base64:5]' }
-            // http://www.ruanyifeng.com/blog/2016/06/css_modules.html
-            // https://www.npmjs.com/package/css-loader#modules
-            // https://blog.csdn.net/pcaxb/article/details/53896661
-            // https://blog.csdn.net/qq_18663357/article/details/54317686
           }
         ]
       },
@@ -62,7 +42,7 @@ module.exports = {
         test: /\.less$/,
         use: [
           {loader: "style-loader"}, // creates style nodes from JS strings
-          {loader: "css-loader",},// translates CSS into CommonJS
+          {loader: "css-loader", options: {modules: true, localIdentName: '[local]-[hash:base64:5]'}},// translates CSS into CommonJS
           {loader: 'postcss-loader', options: {sourceMap: true}},
           {loader: "less-loader"} // compiles Less to CSS
         ]

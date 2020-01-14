@@ -31,13 +31,12 @@
       }
     }
     
-## 效果
-    示例:
-    
+## 示例效果
+![avatar](./demo.png)
 
 
 ## 参数列表
     content: 待截屏的容器,默认值为body
-    h2cOption: html2canvas的参数,具体参照: http://html2canvas.hertzen.com/configuration/
+    h2cOption: html2canvas的参数,具体参照: [配置列表](http://html2canvas.hertzen.com/configuration/)
     
     

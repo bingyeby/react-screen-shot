@@ -47,9 +47,3 @@ module.exports = {
   },
   externals: [nodeExternals()]
 }
-
-// style-loader
-// http://www.ruanyifeng.com/blog/2016/06/css_modules.html
-// https://www.npmjs.com/package/css-loader#modules
-// https://blog.csdn.net/pcaxb/article/details/53896661
-// https://blog.csdn.net/qq_18663357/article/details/54317686

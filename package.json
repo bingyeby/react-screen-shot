@@ -44,7 +44,6 @@
   },
   "scripts": {
     "dev": "node server.js",
-    "screenShotBabel": "npx babel src/screenShot/screenShot.js -d dist --copy-files",
     "screenShot": "webpack --config webpack.config.screenShot.js --progress",
     "dll": "webpack --config webpack.config.dll.js --progress",
     "build": "cross-env BABEL_ENV=production && webpack --config webpack.config.pro.js --progress",

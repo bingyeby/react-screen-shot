@@ -6,20 +6,17 @@ import loadable from 'react-loadable'
 import styles from './index.less'
 import 'antd/dist/antd.css';
 import {hot} from 'react-hot-loader'
-/*
-* 载入组件方式1: 同步方式
-* */
-// import App from './demo-a/app';
-// render(<App />, document.getElementById("root"));
+
+// 载入组件方式1: 同步方式
+// import App from './demo-a/app'
+// render(<App />, document.getElementById("root"))
 
 /*
  * 载入组件方式2: 异步载入
  */
 const Loading = (info) => {
   if (info.error) {
-    return <div style={{whiteSpace: 'pre', color: 'red'}}>
-      {info.error.stack}
-    </div>
+    return <div style={{whiteSpace: 'pre', color: 'red'}}>{info.error.stack}</div>
   }
   return 'loading...'
 }
@@ -36,7 +33,6 @@ let RouterConfig = [
     component: loadable({loader: () => import('./view/demo'), loading: Loading})
   },
 ]
-
 
 let routerWrap = <div className={styles.outer}>
   <Router>
