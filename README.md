@@ -33,7 +33,7 @@
     
 ## 示例效果
 
-![avatar](/demo.png)
+![avatar](./demo.png)
 
 
 ## 参数列表
